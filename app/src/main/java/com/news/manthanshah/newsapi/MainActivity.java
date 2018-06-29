@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,21 @@ public class MainActivity extends AppCompatActivity
         //Connect listView with adapter
         newsListView.setAdapter(adapter);
 
+        newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                News news = adapter.getItem(position);
 
+                if(!news.getUrl().equals(""))
+                {
+                    Uri link = Uri.parse(news.getUrl());
+                    Intent intent = new Intent(Intent.ACTION_VIEW, link);
+                    if(intent.resolveActivity(getPackageManager())!= null){
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
         //Check internet connection
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -40,7 +40,7 @@ class NewsAdapter extends ArrayAdapter<News> {
         dateView.setText(formatDate(currentNews.getPublishDate()));
 
         //Initialize section name of news
-        TextView sectionView = (TextView) listItemView.findViewById(R.id.section);
+        TextView sectionView = listItemView.findViewById(R.id.section);
         sectionView.setText(currentNews.getSectionName());
 
 
