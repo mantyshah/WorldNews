@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Guardian News</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="no_news">No News Found</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Country Settings</string>
+
+    <!-- Strings For Default Place Preference [CHAR LIMIT=30] -->
+    <string name="settings_country_label">Country</string>
+    <string name="settings_country_key" translatable="false">country</string>
+    <string name="settings_country_default" translatable="false">India</string>
+
+</resources>
